@@ -13,10 +13,12 @@ var code_js = function(){
 		'#aj-drawer .open{ display:none}',
 		'#aj-drawer.closed  .close{ display:none !important;}',
 		'#aj-drawer.closed  .open{ display:inline !important}',
+		'.aj-ok { color: green}',
+		'.aj-bad { color: orange}',
 		'.aj-highlight { background-color: yellow; }',
 	'</style>'].join('\n');
 	var table = ['<div id="aji-info-panel">','<div class="aj-scroll-container">','<table>'];
-	table.push('<tr><th>#</th><th>Link Text</th><th>Url</th><th>Alt Text</th><th>Title Text</th></tr>');
+	table.push('<tr><th>#</th><th>Link Text</th><th>Url</th><th>Link Check</th><th>Title Text</th></tr>');
 
 	var allLinks = $('#middle-column a');
 
@@ -33,8 +35,11 @@ var code_js = function(){
         type: "HEAD",
         async: true,
         url: x.href,
-        success: function(message,text,response){
-            console.log(arguments);
+        success: function(message,status,response){
+            if(status = 'success')
+            	$('#aj-url-status-'+index).html('<span class="aj-ok">OK</span>');
+            else
+            	$('#aj-url-status-'+index).html('<span class="aj-bad">'+status+'</span>');
         }
     });
 	});
