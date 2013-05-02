@@ -25,9 +25,18 @@ var code_js = function(){
 		'<td width="2%">', i+1,'</td>',
 		'<td class="aj-name">',$(this).text(),'</td>',
 		'<td class="aj-url">',$(this).attr('href'),'</td>',
-		'<td>',$(this).attr('alt'),'</td>',
+		'<td id="aj-url-status-',i,'">','','</td>',
 		'<td>',$(this).attr('title'),'</td>',
 		'</tr>'].join(''));
+    var index = i; 
+    $.ajax({
+        type: "HEAD",
+        async: true,
+        url: x.href,
+        success: function(message,text,response){
+            console.log(arguments);
+        }
+    });
 	});
 
 	table.push('</table></div>');
