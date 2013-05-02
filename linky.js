@@ -20,7 +20,7 @@ var code_js = function(){
 	var table = ['<div id="aji-info-panel">','<div class="aj-scroll-container">','<table>'];
 	table.push('<tr><th>#</th><th>Link Text</th><th>Url</th><th>Link Check</th><th>Title Text</th></tr>');
 
-	var allLinks = $('#middle-column a');
+	var allLinks = $('#middle-column').length > 0 ? $('#middle-column a'):$('a');
 
 	allLinks.each(function(i,x){
 		table.push(['<tr class="', i%2 == 0?'aj-even': 'aj-odd' ,'" data-index="',i,'">',
