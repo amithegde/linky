@@ -40,8 +40,8 @@ var code_js = function(){
             	$('#aj-url-status-'+index).html('<span class="aj-ok">OK</span>');
             else
             	$('#aj-url-status-'+index).html('<span class="aj-bad">'+status+'</span>');
-        }*/
-    });
+        }
+    });*/
 	});
 
 	table.push('</table></div>');
