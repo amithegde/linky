@@ -31,7 +31,7 @@ var code_js = function(){
 		'<td>',$(this).attr('title'),'</td>',
 		'</tr>'].join(''));
     var index = i; 
-    $.ajax({
+    /*$.ajax({
         type: "HEAD",
         async: true,
         url: x.href,
@@ -40,7 +40,7 @@ var code_js = function(){
             	$('#aj-url-status-'+index).html('<span class="aj-ok">OK</span>');
             else
             	$('#aj-url-status-'+index).html('<span class="aj-bad">'+status+'</span>');
-        }
+        }*/
     });
 	});
 
